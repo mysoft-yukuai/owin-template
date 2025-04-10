@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "mysoft.net.core",
+  "classifications": ["WebAPI", "Windows"],
+  "identity": "mysoft.webapi2.owin",
+  "name": "Mysoft WebApi2 Owin",
+  "shortName": "owin-webapi",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "WebApiTemplate",
+  "preferNameDirectory": true
+}

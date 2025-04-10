@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.OwinSelfHost" Version="5.3.0" />
+    <PackageReference Include="Microsoft.Owin.Cors" Version="4.2.2" />
+    <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.2.2" />
+  </ItemGroup>
+
+  <Target Name="MoveAssembliesToBin" AfterTargets="Publish">
+  	<!-- 创建bin目录 -->
+  	<MakeDir Directories="$(PublishDir)bin" />
+  
+  	<!-- 定义需要移动的文件类型 -->
+  	<ItemGroup>
+  		<AssemblyFiles Include="$(PublishDir)*.dll;$(PublishDir)*.exe;$(PublishDir)*.pdb" />
+  	</ItemGroup>
+  
+  	<!-- 移动文件到bin目录 -->
+  	<Move SourceFiles="@(AssemblyFiles)" DestinationFolder="$(PublishDir)bin" />
+  </Target>
+</Project>
